@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 protocol CoinManagerDelegate {
     //Create the method stubs wihtout implementation in the protocol.
     //It's usually a good idea to also pass along a reference to the current class.

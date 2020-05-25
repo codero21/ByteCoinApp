@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CoinViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, CoinManagerDelegate {
+class CoinViewController: UIViewController {
     
     @IBOutlet weak var bitcoinLabel: UILabel!
     @IBOutlet weak var currencyLabel: UILabel!
@@ -16,17 +16,21 @@ class CoinViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     
     var coinManager = CoinManager()
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
-//         Set the ViewController class as the currencyLabel to the currencyPicker object.
+        //         Set the ViewController class as the currencyLabel to the currencyPicker object.
         coinManager.delegate = self
-//         Set the ViewController class as the datasource to the currencyPicker object.
+        //         Set the ViewController class as the datasource to the currencyPicker object.
         currencyPicker.dataSource = self
-//         Set the ViewController class as the delegate for the currencyPicker object.
+        //         Set the ViewController class as the delegate for the currencyPicker object.
         currencyPicker.delegate = self
     }
     
+}
+
+//MARK: - CoinManagerDelegate
+
+extension CoinViewController: CoinManagerDelegate {
     func didUpdatePrice(price: String, currency: String) {
         //Remember that we need to get hold of the main thread to update the UI, otherwise our app will crash if we
         //try to do this from a background thread (URLSession works in the background).
@@ -39,13 +43,17 @@ class CoinViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     func didFailWithError(error: Error) {
         print(error)
     }
+}
 
+//MARK: - UIPickerViewDelegate / UIPickerViewDataSource
+
+extension CoinViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-//      Get the number of items in the array
+        //      Get the number of items in the array
         return coinManager.currencyArray.count
     }
     
@@ -54,7 +62,7 @@ class CoinViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        Print to console
+        //        Print to console
         print(coinManager.currencyArray[row])
         
         let selectedCurrency = coinManager.currencyArray[row]
