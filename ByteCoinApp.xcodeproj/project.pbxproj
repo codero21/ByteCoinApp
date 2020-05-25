@@ -9,23 +9,25 @@
 /* Begin PBXBuildFile section */
 		E33F2D3E2478ECBF00769AA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33F2D3D2478ECBF00769AA5 /* AppDelegate.swift */; };
 		E33F2D402478ECBF00769AA5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33F2D3F2478ECBF00769AA5 /* SceneDelegate.swift */; };
-		E33F2D422478ECBF00769AA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33F2D412478ECBF00769AA5 /* ViewController.swift */; };
+		E33F2D422478ECBF00769AA5 /* CoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33F2D412478ECBF00769AA5 /* CoinViewController.swift */; };
 		E33F2D452478ECBF00769AA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E33F2D432478ECBF00769AA5 /* Main.storyboard */; };
 		E33F2D472478ECC900769AA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E33F2D462478ECC900769AA5 /* Assets.xcassets */; };
 		E33F2D4A2478ECC900769AA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E33F2D482478ECC900769AA5 /* LaunchScreen.storyboard */; };
 		E33F2D552478EEA200769AA5 /* CoinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33F2D542478EEA200769AA5 /* CoinManager.swift */; };
+		E33F2D572479A56500769AA5 /* CoinData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33F2D562479A56500769AA5 /* CoinData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E33F2D3A2478ECBF00769AA5 /* ByteCoinApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ByteCoinApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E33F2D3D2478ECBF00769AA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E33F2D3F2478ECBF00769AA5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E33F2D412478ECBF00769AA5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E33F2D412478ECBF00769AA5 /* CoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinViewController.swift; sourceTree = "<group>"; };
 		E33F2D442478ECBF00769AA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E33F2D462478ECC900769AA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E33F2D492478ECC900769AA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E33F2D4B2478ECC900769AA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E33F2D542478EEA200769AA5 /* CoinManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinManager.swift; sourceTree = "<group>"; };
+		E33F2D562479A56500769AA5 /* CoinData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				E33F2D542478EEA200769AA5 /* CoinManager.swift */,
+				E33F2D562479A56500769AA5 /* CoinData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -81,7 +84,7 @@
 		E33F2D522478EE2D00769AA5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E33F2D412478ECBF00769AA5 /* ViewController.swift */,
+				E33F2D412478ECBF00769AA5 /* CoinViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -166,7 +169,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E33F2D552478EEA200769AA5 /* CoinManager.swift in Sources */,
-				E33F2D422478ECBF00769AA5 /* ViewController.swift in Sources */,
+				E33F2D422478ECBF00769AA5 /* CoinViewController.swift in Sources */,
+				E33F2D572479A56500769AA5 /* CoinData.swift in Sources */,
 				E33F2D3E2478ECBF00769AA5 /* AppDelegate.swift in Sources */,
 				E33F2D402478ECBF00769AA5 /* SceneDelegate.swift in Sources */,
 			);

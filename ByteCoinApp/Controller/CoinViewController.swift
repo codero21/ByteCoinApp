@@ -8,22 +8,36 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class CoinViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, CoinManagerDelegate {
     
     @IBOutlet weak var bitcoinLabel: UILabel!
     @IBOutlet weak var currencyLabel: UILabel!
     @IBOutlet weak var currencyPicker: UIPickerView!
     
-    let coinManager = CoinManager()
-    
+    var coinManager = CoinManager()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//         Set the ViewController class as the currencyLabel to the currencyPicker object.
+        coinManager.delegate = self
 //         Set the ViewController class as the datasource to the currencyPicker object.
         currencyPicker.dataSource = self
 //         Set the ViewController class as the delegate for the currencyPicker object.
         currencyPicker.delegate = self
+    }
+    
+    func didUpdatePrice(price: String, currency: String) {
+        //Remember that we need to get hold of the main thread to update the UI, otherwise our app will crash if we
+        //try to do this from a background thread (URLSession works in the background).
+        DispatchQueue.main.async {
+            self.bitcoinLabel.text = price
+            self.currencyLabel.text = currency
+        }
+    }
+    
+    func didFailWithError(error: Error) {
+        print(error)
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
